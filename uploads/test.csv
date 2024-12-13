@@ -1,0 +1,3 @@
+transaction_id,vendor_number,transaction_amount,transaction_type
+56,101,5000,transfer_domestic
+63,102,3000,cash_deposit

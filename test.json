@@ -1,0 +1,4 @@
+[
+    {"transaction_id": 75, "vendor_number": 533, "transaction_amount": 5000, "transaction_type": "cash_withdrawl"},
+    {"transaction_id": 80, "vendor_number": 256, "transaction_amount": 5000, "transaction_type": "transfer_international"}
+]

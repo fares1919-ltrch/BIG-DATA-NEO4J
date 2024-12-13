@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Add Transaction</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Add Transaction</h1>
+        <form method="POST">
+            <label for="transaction_id">Transaction ID:</label>
+            <input type="text" id="transaction_id" name="transaction_id" required>
+            
+            <label for="vendor_number">Vendor Number:</label>
+            <input type="text" id="vendor_number" name="vendor_number" required>
+            
+            <label for="transaction_amount">Transaction Amount:</label>
+            <input type="text" id="transaction_amount" name="transaction_amount" required>
+            
+            <label for="transaction_type">Transaction Type:</label>
+            <select id="transaction_type" name="transaction_type" required>
+                <option value="cash_withdrawal">Cash Withdrawal</option>
+                <option value="cash_deposit">Cash Deposit</option>
+                <option value="transfer_domestic">Transfer Domestic</option>
+                <option value="transfer_international">Transfer International</option>
+            </select>
+            
+            <button type="submit">Add Transaction</button>
+        </form>
+        <a href="{{ url_for('index') }}" class="button">Back to Home</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Transaction Admin</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction Admin Interface</h1>
+        <div class="add-transaction-button">
+            <a href="{{ url_for('add_transaction') }}" class="button">Add Transaction</a>
+        </div>
+        <a href="{{ url_for('import_data') }}">
+            <button>Import Transactions</button>
+        </a>
+        
+        <h2>Existing Transactions</h2>
+        <table>
+            <tr>
+                <th>Transaction ID</th>
+                <th>Vendor Number</th>
+                <th>Transaction Amount</th>
+                <th>Transaction Type</th>
+                <th>Actions</th>
+            </tr>
+            {% for transaction in transactions %}
+            <tr>
+                <td>{{ transaction.t.transaction_id }}</td>
+                <td>{{ transaction.t.vendor_number }}</td>
+                <td>{{ transaction.t.transaction_amount }}</td>
+                <td>{{ transaction.t.transaction_type }}</td>
+                <td>
+                    <div class="actions">
+                        <a href="{{ url_for('modify_transaction', transaction_id=transaction.t.transaction_id) }}" class="button modify-button">Modify</a>
+                        <form action="{{ url_for('delete_transaction', transaction_id=transaction.t.transaction_id) }}" method="POST" style="margin: 0;">
+                            <button type="submit" class="button delete-button">Delete</button>
+                        </form>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
