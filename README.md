@@ -76,3 +76,4 @@ Ensure that Neo4j is running and configured properly before launching the applic
 ## **About Neo4j and Flask Integration**
 
 This application integrates **Neo4j**, a graph database, with **Flask**, a lightweight web framework, to enable efficient handling of complex relationships in data. Neo4j allows for intuitive modeling, querying, and visualization of relationships, while Flask serves as the foundation for the web interface.
+...
